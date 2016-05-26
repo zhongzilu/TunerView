@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity1"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tuner"
+        android:textSize="30sp"
+        android:padding="10dp"
+        android:gravity="center"/>
+
+    <com.zhongzilu.tuner.DialView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"/>
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/wrap_corner"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="250dp"-->
+        <!--android:layout_centerInParent="true">-->
+
+    <!--</RelativeLayout>-->
+
+
+    <CheckBox
+        android:id="@+id/startButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="START"
+        android:textColor="#fff"
+        android:button="@null"
+        android:gravity="center"
+        android:padding="16dp"
+        android:checked="false"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:background="@drawable/btn_start"
+        android:layout_alignParentBottom="true"/>
+
+    <!--<TextView-->
+        <!--android:id="@+id/pitch_title"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Pitch"-->
+        <!--android:textSize="30sp"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_below="@id/wrap_corner"-->
+        <!--android:layout_marginTop="20dp"/>-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/tv_pitch_value"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="- -"-->
+        <!--android:textSize="30sp"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_below="@id/pitch_title"/>-->
+</RelativeLayout>
