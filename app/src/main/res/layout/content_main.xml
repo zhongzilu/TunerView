@@ -22,14 +22,6 @@
         android:layout_height="match_parent"
         android:layout_centerInParent="true"/>
 
-    <!--<RelativeLayout-->
-        <!--android:id="@+id/wrap_corner"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="250dp"-->
-        <!--android:layout_centerInParent="true">-->
-
-    <!--</RelativeLayout>-->
-
 
     <CheckBox
         android:id="@+id/startButton"
@@ -46,22 +38,4 @@
         android:background="@drawable/btn_start"
         android:layout_alignParentBottom="true"/>
 
-    <!--<TextView-->
-        <!--android:id="@+id/pitch_title"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Pitch"-->
-        <!--android:textSize="30sp"-->
-        <!--android:gravity="center"-->
-        <!--android:layout_below="@id/wrap_corner"-->
-        <!--android:layout_marginTop="20dp"/>-->
-
-    <!--<TextView-->
-        <!--android:id="@+id/tv_pitch_value"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="- -"-->
-        <!--android:textSize="30sp"-->
-        <!--android:gravity="center"-->
-        <!--android:layout_below="@id/pitch_title"/>-->
 </RelativeLayout>
