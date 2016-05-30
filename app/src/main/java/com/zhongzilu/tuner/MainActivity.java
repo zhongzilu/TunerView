@@ -11,17 +11,22 @@ import android.widget.CompoundButton;
 public class MainActivity extends AppCompatActivity {
 
     private CheckBox mStartButton;
+    DialView view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        view = (DialView) findViewById(R.id.myTunerView);
+
         mStartButton = (CheckBox) findViewById(R.id.startButton);
         mStartButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 mStartButton.setText(isChecked ? "STOP" : "START");
+                view.setValue(30f);
             }
         });
 
