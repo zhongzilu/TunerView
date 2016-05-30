@@ -19,7 +19,7 @@ public class DialView extends View {
     private int mMinValue = -50; //分值区间的最小值
     /**输入值，通过输入值来计算指针的旋转角度，即{@mAngle}的值,
      * 最终在界面上呈现的效果是指针指向输入值的刻度上*/
-//    private float mValue = 0f;
+    private String mValue = "- -";
     /**刻度盘呈现的总弧度，本案例中总弧度为180，呈半圆形*/
     private float mArc = 180f;
     /**指针旋转角度值*/
@@ -133,7 +133,7 @@ public class DialView extends View {
         //在屏幕宽度为621下，大小为3
         paintCursor.setStrokeWidth((mWidth * 0.004830f));
         paintCursor.setAntiAlias(true);
-//        paintCursor.setColor(getResources().getColor(R.color.colorAccent));
+        paintCursor.setColor(getResources().getColor(R.color.colorAccent));
         /**
          * 思路：要想让指针以圆心为中心旋转一定角度，要么旋转画布，要么根据坐标来画，
          * 由于旋转角度比根据坐标更简单，所以就用旋转角度的方式来实现
@@ -186,9 +186,9 @@ public class DialView extends View {
         pitchValuePaint.setAntiAlias(true);
         pitchValuePaint.setTextSize((mWidth * 0.080515f));
         pitchValuePaint.setColor(getResources().getColor(R.color.colorAccent));
-        String value = "- -";
-        canvas.drawText(value,
-                xc - pitchValuePaint.measureText(value) / 2,
+//        String value = "- -";
+        canvas.drawText(mValue,
+                xc - pitchValuePaint.measureText(mValue) / 2,
                 yc + (xc * 0.481481f + mWidth * 0.209339f),
                 pitchValuePaint);
 
@@ -208,13 +208,16 @@ public class DialView extends View {
      * @param value
      */
     public void setValue(float value){
-        final float angle = value * (mArc / (float) (mMaxValue - mMinValue));
+//        final float angle = value * (mArc / (float) (mMaxValue - mMinValue));
 
-        ValueAnimator startAnimator = ValueAnimator.ofFloat(0f, angle);
+        ValueAnimator startAnimator = ValueAnimator.ofFloat(0, value);
         startAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                mAngle = (float) animation.getAnimatedValue();
+
+                float md = (float) animation.getAnimatedValue();
+                mAngle = md * (mArc / (float) (mMaxValue - mMinValue));
+                mValue = String.valueOf((int)md);
                 invalidate();
 
             }
