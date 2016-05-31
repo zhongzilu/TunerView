@@ -13,3 +13,5 @@
 **2016-05-30修改内容**1
 
 1.增加指针偏转动画，暂时还没有实现归零动画
+
+![TunerView Gif](http://www.bit100.com/.zhongzilu/image/TunerView.gif)
